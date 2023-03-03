@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculate</title>
+    <link rel="stylesheet" href="calculate.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<style>
+    .container{
+        margin: auto;
+    }
+    button{
+        margin:5px 0;
+        border:none;
+        width: 60px;
+        height: 40px;
+    border-radius:10px!important;
+}
+.shadow input{
+    text-align: end;
+    font-size: 40px;
+    padding: 0 10px;
+}
+.form-control:focus{
+    box-shadow: none !important;
+}
+.shadow{
+    background-color:orange;
+    border-radius: 10px;
+}
+</style>
+<body>
+  <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 mt-5 shadow p-3">
+                <div class="row gx-1 gy-1">   
+                    <div class="col-12">
+                        <input type="text" class="form-control" id="calculate" placeholder="0">
+                    </div>
+                    <div class="col-3 d-grid gap-2">
+                          <button onclick="clr()">clr</button>  
+                    </div>
+
+                    <div class="col-3 d-grid gap-2">
+                        <button onclick="del()">del</button>  
+                    </div>
+                  
+                    <div class="col-3 d-grid gap-2">
+                             <button onclick="dis('%')">%</button>  
+                    </div>
+
+                     <div class="col-3 d-grid gap-2">
+                        <button onclick="dis('/')">/</button>  
+                     </div>
+          
+                     <div class="col-3 d-grid gap-2">
+                           <button onclick="dis('7')">7</button>  
+                     </div>
+
+                     <div class="col-3 d-grid gap-2">
+                        <button onclick="dis('8')">8</button>  
+                    </div>
+
+                    <div class="col-3 d-grid gap-2">
+                         <button onclick="dis('9')">9</button>  
+                     </div>
+
+                    <div class="col-3 d-grid gap-2">
+                          <button onclick="dis('*')">*</button>  
+                     </div>
+
+
+                     <div class="col-3 d-grid gap-2">
+                          <button onclick="dis('4')">4</button>  
+                     </div> 
+                     
+                     <div class="col-3 d-grid gap-2">
+                        <button onclick="dis('5')">5</button>  
+                   </div>
+
+                   <div class="col-3 d-grid gap-2">
+                     <button onclick="dis('6')">6</button>  
+                    </div>
+
+
+                <div class="col-3 d-grid gap-2">
+                        <button onclick="dis('-')">-</button>  
+                </div>
+
+                <div class="col-3 d-grid gap-2">
+                    <button onclick="dis('1')">1</button>  
+                 </div>
+
+                 <div class="col-3 d-grid gap-2">
+                    <button onclick="dis('2')">2</button>  
+                 </div>
+
+                 <div class="col-3 d-grid gap-2">
+                    <button onclick="dis('3')">3</button>  
+                 </div>
+
+                 <div class="col-3 d-grid gap-2">
+                    <button onclick="dis('+')">+</button>  
+                 </div>
+
+                 <div class="col-3 d-grid gap-2">
+                    <button onclick="dis('.')">.</button>  
+                 </div>
+      
+                 <div class="col-3 d-grid gap-2">
+                    <button onclick="dis('0')">0</button>  
+                 </div>
+                 <div class="col-3 d-grid gap-2">
+                    <button onclick="eql()">=</button>  
+                 </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+    <script>
+        let input=document.getElementById('calculate');
+
+        function dis(num){
+            calculate.value+=num;
+        }
+        function clr(){
+            calculate.value=''; 
+        }
+        function del(){
+            calculate.value=calculate.value.slice(0,-1);
+        }
+        function eql(){
+            try{
+                calculate.value=eval(calculate.value);
+            }
+            catch{
+                alert('invalid')
+            }
+            
+        }
+    </script>
+</body>
+</html>
